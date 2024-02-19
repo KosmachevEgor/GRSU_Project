@@ -24,7 +24,7 @@
                 <div class="card-body m-2">
                   <h5 class="card-title">Models</h5>
                   <p class="card-text">5</p>
-                  <a href="#" class="btn btn-outline-primary" role="button">Info</a>
+                  <a href="{{ route('models.index') }}" class="btn btn-outline-primary" role="button">Info</a>
                 </div>
               </div>
             </div>

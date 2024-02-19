@@ -21,8 +21,9 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'], f
     Route::group(['namespace' => 'Home'], function (){
         Route::get('/', IndexController::class);
     });
-    Route::get('/models', function (){
-        return view('admin.models.index');
+    Route::group(['namespace' => 'SpineModel'], function (){
+        Route::get('/models', IndexController::class)->name('models.index');
+        Route::get('/models/create', CreateController::class)->name('models.create');
     });
 });
 
