@@ -16,7 +16,7 @@
 </head>
 <body>
     <!--SideBar-->
-    @include('includes.home.sidebar')
+    @include('admin.includes.sidebar')
     <div class='section'>
         @yield('content')
     </div>
