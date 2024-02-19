@@ -10,11 +10,11 @@ window.onload = function(){
     function menuBtnChange(){
         if(sidebar.classList.contains("open")){
             closeBtn.classList.replace("bx-menu","bx-menu-alt-right")
-            section.style['padding-left'] = "250px"
+            section.style['padding-left'] = "260px"
 
         }else{
             closeBtn.classList.replace("bx-menu-alt-right","bx-menu")
-            section.style['padding-left'] = "75px"
+            section.style['padding-left'] = "85px"
         }
     }
 }

@@ -10,7 +10,7 @@
         'resources/js/app.js',
         'public/css/sidebar.css',
         'public/js/sidebar.js',
-        'public/css/home/style.css'
+        'public/css/admin/style.css'
         ])
     <title>Laravel_Project</title>
 </head>
