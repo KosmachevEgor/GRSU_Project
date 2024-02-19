@@ -1,4 +1,4 @@
-@extends('layouts.home.app')
+@extends('layouts.app')
 @section('content')
 <div class="header">
     <h2>Virtual tour of the spine</h2>
