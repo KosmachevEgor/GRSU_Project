@@ -21,6 +21,9 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'], f
     Route::group(['namespace' => 'Home'], function (){
         Route::get('/', IndexController::class);
     });
+    Route::get('/models', function (){
+        return view('admin.models.index');
+    });
 });
 
 Auth::routes();
