@@ -21,7 +21,6 @@ class StoreController extends BaseController
         if($request->hasFile('model_path')){
             $model = $request->file('model_path');
             $modelName = $request->file('model_path')->getClientOriginalName();
-            $modelExtention = $request->file('model_path')->getClientOriginalExtension();
             $data['model_path'] = $model->storeAs('models',$modelName, 'public');
         }
 
