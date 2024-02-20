@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('spine_parts', function (Blueprint $table) {
             $table->id();
+            $table->string('part_name');
             $table->string('title');
             $table->text('description');
             $table->timestamps();

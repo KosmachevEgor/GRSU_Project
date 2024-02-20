@@ -23,6 +23,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'string',
+            'part_name' => 'string',
             'description' => 'string'
         ];
     }

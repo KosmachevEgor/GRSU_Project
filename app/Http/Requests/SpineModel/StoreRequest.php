@@ -25,7 +25,8 @@ class StoreRequest extends FormRequest
             'title' => 'string',
             'description' => 'string',
             'model_image_path' => 'string',
-            'model_path' => 'string'
+            'model_path' => 'string',
+            'spine_parts' => ''
         ];
     }
 }

@@ -9,9 +9,6 @@ class SpinePart extends Model
 {
     use HasFactory;
 
-    protected $table = 'spine_parts';
-    protected $guarded = false;
-
     public function models()
     {
         //Связь многие ко многим
