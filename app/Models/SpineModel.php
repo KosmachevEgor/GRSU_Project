@@ -10,7 +10,7 @@ class SpineModel extends Model
     use HasFactory;
 
     protected $table = 'spine_models';
-    protected $guarded = false;
+    protected $guarded = [];
 
     public function parts()
     {
