@@ -24,8 +24,8 @@ class StoreRequest extends FormRequest
         return [
             'title' => 'string',
             'description' => 'string',
-            'model_image_path' => 'string',
-            'model_path' => 'string',
+            'model_image_path' => '',
+            'model_path' => '',
             'spine_parts' => ''
         ];
     }

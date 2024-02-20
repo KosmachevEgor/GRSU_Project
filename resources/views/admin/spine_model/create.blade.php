@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('content')
-<form action="{{ route('admin.models.store') }}" method="post">
+<form action="{{ route('admin.models.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="model-title">Title</label>

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get("/info", function () {
+    return phpinfo();
+});
+
 Route::group(['namespace' => 'App\Http\Controllers\Home'], function (){
     Route::get('/', IndexController::class);
 });

@@ -12,6 +12,19 @@ class StoreController extends BaseController
     {
         $data = $request->validated();
 
+        if($request->hasFile('model_image_path') ) {
+            $image = $request->file('model_image_path');
+            $imagePath = $image->store('images', 'public');
+            $data['model_image_path'] = $imagePath;
+
+        }
+        if($request->hasFile('model_path')){
+            $model = $request->file('model_path');
+            $modelName = $request->file('model_path')->getClientOriginalName();
+            $modelExtention = $request->file('model_path')->getClientOriginalExtension();
+            $data['model_path'] = $model->storeAs('models',$modelName, 'public');
+        }
+
         $this->service->store($data);
 
         return redirect()->route('admin.models.index');
