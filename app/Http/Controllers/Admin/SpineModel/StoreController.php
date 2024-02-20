@@ -24,6 +24,6 @@ class StoreController extends Controller
             'model_path' => $request->model_path
         ]);
 
-        return redirect()->route('models.index');
+        return redirect()->route('admin.models.index');
     }
 }
