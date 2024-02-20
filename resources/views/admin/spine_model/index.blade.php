@@ -1,6 +1,5 @@
 @extends('admin.layouts.app')
 @section('content')
-{{ $spineModels }}
 <table class="table">
     <thead>
       <tr>
