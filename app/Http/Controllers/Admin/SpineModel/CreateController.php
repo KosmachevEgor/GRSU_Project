@@ -8,6 +8,6 @@ class CreateController extends Controller
 {
     public function __invoke()
     {
-        return view('admin.spine-model.create');
+        return view('admin.spine_model.create');
     }
 }

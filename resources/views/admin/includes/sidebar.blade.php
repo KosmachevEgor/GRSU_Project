@@ -7,18 +7,25 @@
     <hr>
     <ul class="nav-list">
       <li>
-        <a href="#">
+        <a href="{{ route('admin.index') }}">
             <i class="bi bi-house-fill"></i>
             <span class="link_name">Home</span>
         </a>
         <span class="tooltip">Home</span>
       </li>
       <li>
-        <a href="#">
+        <a href="{{ route('admin.models.index') }}">
             <i class="bi bi-box-fill"></i>
-          <span class="link_name">Models</span>
+          <span class="link_name">Spine Models</span>
         </a>
-        <span class="tooltip">Models</span>
+        <span class="tooltip">Spine Models</span>
+      </li>
+      <li>
+        <a href="{{ route('admin.parts.index') }}">
+            <i class="bi bi-diagram-3-fill"></i>
+          <span class="link_name">Spine Parts</span>
+        </a>
+        <span class="tooltip">Spine Parts</span>
       </li>
       <li>
         <a href="#">

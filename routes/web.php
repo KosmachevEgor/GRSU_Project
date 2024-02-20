@@ -19,12 +19,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Home'], function (){
 
 Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'], function(){
     Route::group(['namespace' => 'Home'], function (){
-        Route::get('/', IndexController::class);
+        Route::get('/', IndexController::class)->name('admin.index');
     });
     Route::group(['namespace' => 'SpineModel'], function (){
         Route::get('/models', IndexController::class)->name('admin.models.index');
         Route::get('/models/create', CreateController::class)->name('admin.models.create');
         Route::post('/models', StoreController::class)->name('admin.models.store');
+    });
+
+    Route::group(['namespace' => 'SpinePart'], function (){
+        Route::get('/parts', IndexController::class)->name('admin.parts.index');
     });
 });
 
