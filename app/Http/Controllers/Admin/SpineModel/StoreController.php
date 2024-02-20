@@ -2,27 +2,17 @@
 
 namespace App\Http\Controllers\Admin\SpineModel;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\SpineModel\BaseController;
+use App\Http\Requests\SpineModel\StoreRequest;
 use App\Models\SpineModel;
-use Illuminate\Http\Request;
 
-class StoreController extends Controller
+class StoreController extends BaseController
 {
-    public function __invoke(Request $request)
+    public function __invoke(StoreRequest $request)
     {
-        $this->validate($request,[
-            'title' => 'required',
-            'description' => 'required',
-            'model_image_path' => 'required',
-            'model_path' => 'required'
-        ]);
+        $data = $request->validated();
 
-        SpineModel::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'model_image_path' => $request->model_image_path,
-            'model_path' => $request->model_path
-        ]);
+        $this->service->store($data);
 
         return redirect()->route('admin.models.index');
     }
