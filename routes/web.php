@@ -29,6 +29,8 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'], f
 
     Route::group(['namespace' => 'SpinePart'], function (){
         Route::get('/parts', IndexController::class)->name('admin.parts.index');
+        Route::get('/parts/create', CreateController::class)->name('admin.parts.create');
+        Route::post('/parts', StoreController::class)->name('admin.parts.store');
     });
 });
 

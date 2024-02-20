@@ -29,5 +29,5 @@
       </tr>
     </tbody>
   </table>
-  <a href="{{ route('admin.models.create') }}" class="btn btn-outline-primary" role="button">Create Model</a>
+  <a href="{{ route('admin.parts.create') }}" class="btn btn-outline-primary" role="button">Create Model</a>
 @endsection
