@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('spine_model_spine_parts', function (Blueprint $table) {
+        Schema::create('spine_model_spine_part', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('spine_model_id');
             $table->unsignedBigInteger('spine_part_id');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('spine_model_spine_parts');
+        Schema::dropIfExists('spine_model_spine_part');
     }
 };

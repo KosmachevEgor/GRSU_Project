@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th scope="col">Name</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
         <th scope="col">created_at</th>
@@ -15,6 +16,7 @@
           @foreach ($parts as $part)
           <tr>
             <th scope="row">{{ $part->id }}</th>
+            <td>{{ $part->part_name }}</td>
             <td>{{ $part->title }}</td>
             <td>{{ $part->description }}</td>
             <td>{{ $part->created_at }}</td>

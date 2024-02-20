@@ -3,22 +3,17 @@
 namespace App\Http\Controllers\Admin\SpinePart;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SpinePart\StoreRequest;
 use App\Models\SpinePart;
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(StoreRequest $request)
     {
-        $this->validate($request,[
-            'title' => 'required',
-            'description' => 'required',
-        ]);
+        $data = $request->validated();
 
-        SpinePart::create([
-            'title' => $request->title,
-            'description' => $request->description,
-        ]);
+        SpinePart::create($data);
 
         return redirect()->route('admin.parts.index');
     }

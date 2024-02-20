@@ -3,8 +3,8 @@
 <form action="{{ route('admin.parts.store') }}" method="post">
     @csrf
     <div class="mb-3">
-        <label for="part-description" class="form-label">Part Name</label>
-        <textarea class="form-control" name='part_name' id="part-description" placeholder="description"></textarea>
+        <label for="part-name" class="form-label">Part Name</label>
+        <input type="text" class="form-control" name='part_name' id="part-name" placeholder="Name">
     </div>
     <div class="mb-3">
         <label for="part-title">Title</label>

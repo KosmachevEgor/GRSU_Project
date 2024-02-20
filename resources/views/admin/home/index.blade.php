@@ -38,7 +38,7 @@
                 <div class="card-body m-2">
                   <h5 class="card-title">Parts</h5>
                   <p class="card-text">5</p>
-                  <a href="{{ route('admin.models.index') }}" class="btn btn-outline-primary" role="button">Info</a>
+                  <a href="{{ route('admin.parts.index') }}" class="btn btn-outline-primary" role="button">Info</a>
                 </div>
               </div>
             </div>
