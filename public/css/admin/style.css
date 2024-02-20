@@ -1,0 +1,21 @@
+:root{
+    --index:calc(1vw + 1vh);
+}
+
+.section{
+    padding-top: 2%;
+    padding-left: 80px;
+    transition: all .5s ease;
+    height: 100vh;
+    width: 100%;
+}
+
+.info-block{
+    position: relative;
+    display: flex;
+}
+
+.icon{
+    font-size: 64px;
+    color: rgb(9, 102, 179);
+}
