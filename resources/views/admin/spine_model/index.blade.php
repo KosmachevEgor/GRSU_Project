@@ -20,10 +20,10 @@
             <td>{{ $model->title }}</td>
             <td>{{ $model->description }}</td>
             <td>{{ $model->model_path }}</td>
-            <td>{{ $model->model_image_path }}</td>
+            <td><img style='width: 100px; height:100px' src="{{ url('/storage/'.$model->model_image_path)}}"></td>
             <td>
                 @foreach ($model->parts as $modelPart)
-                    {{ $modelPart->part_name}}</br>
+                    {{ $modelPart->part_name}}
                 @endforeach
             </td>
             <td>{{ $model->created_at }}</td>
