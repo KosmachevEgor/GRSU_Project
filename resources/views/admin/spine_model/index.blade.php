@@ -1,36 +1,30 @@
 @extends('admin.layouts.app')
 @section('content')
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Model</th>
-        <th scope="col">Imgae</th>
-        <th scope='col'>Parts</th>
-        <th scope="col">created_at</th>
-        <th scope="col">updated_at</th>
-      </tr>
-    </thead>
-    <tbody>
-        @foreach ($spineModels as $model)
-        <tr>
-            <th scope="row">{{ $model->id }}</th>
-            <td>{{ $model->title }}</td>
-            <td>{{ $model->description }}</td>
-            <td>{{ $model->model_path }}</td>
-            <td><img style='width: 100px; height:100px' src="{{ url('/storage/'.$model->model_image_path)}}"></td>
-            <td>
-                @foreach ($model->parts as $modelPart)
-                    {{ $modelPart->part_name}}
-                @endforeach
-            </td>
-            <td>{{ $model->created_at }}</td>
-            <td>{{ $model->updated_at }}</td>
-          </tr>
-        @endforeach
-    </tbody>
-  </table>
   <a href="{{ route('admin.models.create') }}" class="btn btn-outline-primary" role="button">Create Model</a>
+  <div class="info-block">
+    @foreach ($spineModels as $model)
+    <div class="card m-1" style="width: 18rem;">
+      <img src="{{ url('/storage/'.$model->model_image_path)}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ $model->title }}</h5>
+        <p class="card-text">{{ $model->description }}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ $model->model_path }}</li>
+      <li class="list-group-item">
+          @foreach ($model->parts as $modelPart)
+              {{ $modelPart->part_name}}
+          @endforeach
+      </li>
+        <li class="list-group-item">Created at: <b>{{ $model->created_at }}</b></li>
+      </ul>
+      <div class="card-body">
+        <a href="{{ route('admin.models.show', $model->id) }}" class="card-link">Show</a>
+        <a href="#" class="card-link">Edit</a>
+        <a href="#" class="card-link">Delete</a>
+      </div>
+    </div>
+    @endforeach
+  </div>
+
 @endsection

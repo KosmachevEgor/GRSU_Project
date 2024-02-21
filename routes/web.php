@@ -28,6 +28,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'], f
     Route::group(['namespace' => 'SpineModel'], function (){
         Route::get('/models', IndexController::class)->name('admin.models.index');
         Route::get('/models/create', CreateController::class)->name('admin.models.create');
+        Route::get('/models/{id}', ShowController::class)->name('admin.models.show');
         Route::post('/models', StoreController::class)->name('admin.models.store');
     });
 
