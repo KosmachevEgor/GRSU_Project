@@ -1,12 +1,14 @@
 @extends('admin.layouts.app')
 @section('content')
-
-<div class="card mb-3" style="max-width: 100%;">
+@vite([
+    'public/js/admin/single-spine-model.js'
+])
+<div class="card">
     <div class="row g-0">
-      <div class="col-md-4">
+      {{-- <div class="col-md-4">
         <img src="{{ url('/storage/'.$spineModel->model_image_path)}}" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-4">
+      </div> --}}
+      <div class="col-md-5">
         <div class="card-body">
           <h5 class="card-title">{{ $spineModel->title }}</h5>
           <p class="card-text">{{ $spineModel->description }}</p>
@@ -19,8 +21,9 @@
         </p>
         </div>
       </div>
-      <div class="col-md-4">
-        Тут будет 3D preview
+      <input type="hidden" id="spine-model-path" value={{ url('/storage/'.$spineModel->model_path) }}>
+      <div class="col-md-7" style="position: relative">
+        <canvas id="main-canvas"></canvas>
       </div>
     </div>
   </div>
