@@ -30,6 +30,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'], f
         Route::get('/models/create', CreateController::class)->name('admin.models.create');
         Route::get('/models/{id}', ShowController::class)->name('admin.models.show');
         Route::post('/models', StoreController::class)->name('admin.models.store');
+        Route::delete('/models/{id}', DestroyController::class)->name('admin.models.destroy');
     });
 
     Route::group(['namespace' => 'SpinePart'], function (){

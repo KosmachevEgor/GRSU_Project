@@ -21,7 +21,12 @@
       <div class="card-body">
         <a href="{{ route('admin.models.show', $model->id) }}" class="card-link">Show</a>
         <a href="#" class="card-link">Edit</a>
-        <a href="#" class="card-link">Delete</a>
+        {{-- <a href="{{ route('admin.models.destroy', $model->id) }}" class="card-link">Delete</a> --}}
+        <form method="POST" action="{{ route('admin.models.destroy', $model->id) }}">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('Are you sure you want to delete this model?')">Delete Model</button>
+        </form>
       </div>
     </div>
     @endforeach
