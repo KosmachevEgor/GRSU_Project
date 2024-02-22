@@ -18,10 +18,14 @@ Route::get("/info", function () {
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Home'], function (){
-    Route::get('/', IndexController::class);
+    Route::get('/home', IndexController::class)->name('index');
 });
 
-Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'], function(){
+//Для теста. После переделать
+Route::get('/login', App\Http\Controllers\Admin\Home\LoginController::class)->name('login');
+Route::get('/reg', App\Http\Controllers\Admin\Home\RegistrationController::class)->name('register');
+
+Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware'=>'admin.auth'], function(){
     Route::group(['namespace' => 'Home'], function (){
         Route::get('/', IndexController::class)->name('admin.index');
     });
