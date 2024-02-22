@@ -16,6 +16,10 @@ class Service
         $spineParts = $data['spine_parts'];
         unset($data['spine_parts']);
 
+        $spineModel->update([
+            'model_image_path' => $imagePath,
+            'model_path' => $modelPath
+        ]);
         $spineModel->update($data);
         $spineModel = $spineModel->refresh();
         $spineModel->parts()->sync($spineParts);

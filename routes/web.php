@@ -43,6 +43,9 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin', 'm
         Route::get('/parts', IndexController::class)->name('admin.parts.index');
         Route::get('/parts/create', CreateController::class)->name('admin.parts.create');
         Route::post('/parts', StoreController::class)->name('admin.parts.store');
+        Route::delete('/parts/{id}', DestroyController::class)->name('admin.parts.destroy');
+        Route::get('/parts/{id}/edit', EditController::class)->name('admin.parts.edit');
+        Route::patch('/parts/{id}', UpdateController::class)->name('admin.parts.update');
     });
 });
 

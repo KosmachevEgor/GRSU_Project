@@ -10,6 +10,8 @@
         <th scope="col">Description</th>
         <th scope="col">created_at</th>
         <th scope="col">updated_at</th>
+        <th scope='col'>Edit</th>
+        <th scope='col'>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +23,14 @@
             <td>{{ $part->description }}</td>
             <td>{{ $part->created_at }}</td>
             <td>{{ $part->updated_at }}</td>
+            <td><a href="{{ route('admin.parts.edit', $part->id) }}">Edit</a></td>
+            <td>
+                <form method="POST" action="{{ route('admin.parts.destroy', $part->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-link" onclick="return confirm('Are you sure you want to delete this part?')">Delete</button>
+                </form>
+            </td>
           </tr>
           @endforeach
     </tbody>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\SpineModelDeleted;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +12,10 @@ class SpineModel extends Model
 
     protected $table = 'spine_models';
     protected $guarded = [];
+
+    protected $dispatchesEvents = [
+        'deleted' => SpineModelDeleted::class
+    ];
 
     public function parts()
     {
