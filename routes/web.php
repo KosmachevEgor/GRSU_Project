@@ -31,6 +31,8 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix' => 'admin'], f
         Route::get('/models/{id}', ShowController::class)->name('admin.models.show');
         Route::post('/models', StoreController::class)->name('admin.models.store');
         Route::delete('/models/{id}', DestroyController::class)->name('admin.models.destroy');
+        Route::get('/models/{id}/edit', EditController::class)->name('admin.models.edit');
+        Route::patch('/models/{id}', UpdateController::class)->name('admin.models.update');
     });
 
     Route::group(['namespace' => 'SpinePart'], function (){

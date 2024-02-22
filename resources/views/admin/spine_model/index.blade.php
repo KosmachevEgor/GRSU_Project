@@ -3,7 +3,7 @@
   <a href="{{ route('admin.models.create') }}" class="btn btn-outline-primary" role="button">Create Model</a>
   <div class="info-block">
     @foreach ($spineModels as $model)
-    <div class="card m-1" style="width: 18rem;">
+    <div class="card m-1" style="width: 20rem;">
       <img src="{{ url('/storage/'.$model->model_image_path)}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ $model->title }}</h5>
@@ -18,14 +18,13 @@
       </li>
         <li class="list-group-item">Created at: <b>{{ $model->created_at }}</b></li>
       </ul>
-      <div class="card-body">
+      <div class="card-body" style='display: flex; align-items: center;'>
         <a href="{{ route('admin.models.show', $model->id) }}" class="card-link">Show</a>
-        <a href="#" class="card-link">Edit</a>
-        {{-- <a href="{{ route('admin.models.destroy', $model->id) }}" class="card-link">Delete</a> --}}
+        <a href="{{ route('admin.models.edit', $model->id) }}" class="card-link">Edit</a>
         <form method="POST" action="{{ route('admin.models.destroy', $model->id) }}">
             @csrf
             @method('DELETE')
-            <button type="submit" onclick="return confirm('Are you sure you want to delete this model?')">Delete Model</button>
+            <button type="submit" class="btn btn-link" onclick="return confirm('Are you sure you want to delete this model?')">Delete Model</button>
         </form>
       </div>
     </div>
