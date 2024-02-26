@@ -16,6 +16,7 @@
     "dependencies": {
         "@tweenjs/tween.js": "^21.0.0",
         "bootstrap-icons": "^1.11.2",
+        "dat.gui": "^0.7.9",
         "three": "^0.157.0",
         "three-addons": "^1.2.0",
         "vite-plugin-icons": "^0.6.5"

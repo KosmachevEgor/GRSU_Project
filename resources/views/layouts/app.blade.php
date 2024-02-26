@@ -17,7 +17,7 @@
 <body>
     <!--SideBar-->
     @include('includes.sidebar')
-    <div class='section'>
+    <div class='section' id='main'>
         @yield('content')
     </div>
 </body>

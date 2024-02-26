@@ -14,7 +14,7 @@
         <span class="tooltip">Home</span>
       </li>
       <li>
-        <a href="#">
+        <a href="{{ route('models.index') }}">
             <i class="bi bi-box-fill"></i>
           <span class="link_name">Models</span>
         </a>
