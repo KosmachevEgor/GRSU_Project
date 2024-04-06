@@ -9,8 +9,8 @@
               <div class="col-md-8">
                 <div class="card-body m-2">
                   <h5 class="card-title">Posts</h5>
-                  <p class="card-text">180</p>
-                  <a href="#" class="btn btn-outline-primary" role="button">Info</a>
+                  <p class="card-text">{{ $countOfPosts }}</p>
+                  <a href="{{ route('admin.posts.index') }}" class="btn btn-outline-primary" role="button">Info</a>
                 </div>
               </div>
             </div>
@@ -23,7 +23,7 @@
               <div class="col-md-8">
                 <div class="card-body m-2">
                   <h5 class="card-title">Models</h5>
-                  <p class="card-text">5</p>
+                  <p class="card-text">{{ $countOfModels }}</p>
                   <a href="{{ route('admin.models.index') }}" class="btn btn-outline-primary" role="button">Info</a>
                 </div>
               </div>
@@ -37,7 +37,7 @@
               <div class="col-md-8">
                 <div class="card-body m-2">
                   <h5 class="card-title">Parts</h5>
-                  <p class="card-text">5</p>
+                  <p class="card-text">{{ $countOfParts }}</p>
                   <a href="{{ route('admin.parts.index') }}" class="btn btn-outline-primary" role="button">Info</a>
                 </div>
               </div>

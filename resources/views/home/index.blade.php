@@ -1,13 +1,22 @@
 @extends('layouts.app')
 @section('content')
-<div class="header">
-    <h2>Virtual tour of the spine</h2>
-</div>
-<div class="text-section">
-    <p>
-        Данный сайт создан исключительно в информационных целях.
-        Это позволит получить общее представление о строении шейного отдела позвоночника, межпозвонкового диска, пульпозного ядра и плазматической мембраны.
-    </p>
-    <video src="{{ asset('video/4k_end.webm') }}" autoplay loop muted>
-</div>
+    @vite([
+        'public/js/home/index/index.js',
+    ])
+    <div id = "block1" class="block">
+        <h2>Добро пожаловать в Vertebra</h2>
+        <img src="{{ asset('image/neck.webp') }}" alt="">
+    </div>
+    <div id = "block2" class="block">
+        <img src="{{ asset('image/disk.png') }}" alt="" style="height: 50%">
+        <div>
+            <p>-На платформе представлены детальные модели шейного отдела позвоночника</p>
+            <p>-К моделям представлены статьи о строении и функциях</p>
+            <p>-Vertebra способна погрузить вас в мир строения шейного отдела на основе 3D моделей</p>
+        </div>
+    </div>
+    <div id = "block3" class="block">
+        <img src="{{ asset('image/step3.webp') }}" alt="" style="height:95vh">
+        <a href="{{ route('virtualTour.index') }}" type="button" class="btn btn-outline-light" style="font-family: 'Pacifico', sans-serif; font-size: calc(var(--index)*1.25)">Начать экскурсию</a>
+    </div>
 @endsection

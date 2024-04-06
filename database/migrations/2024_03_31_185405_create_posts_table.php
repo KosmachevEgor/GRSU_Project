@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('spine_models', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
-            $table->string('model_path')->nullable();
-            $table->string('model_image_path')->nullable();
-            $table->boolean('vertical')->default(false);
+            $table->text('content');
+            $table->string('source_link');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('spine_models');
+        Schema::dropIfExists('posts');
     }
 };

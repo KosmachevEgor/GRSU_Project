@@ -1,7 +1,7 @@
   <div class="sidebar">
     <div class="logo_details">
         <i class="bi bi-github icon"></i>
-      <div class="logo_name">GRSU Project</div>
+      <div class="logo_name">Vertebra</div>
       <i class="bx bx-menu" id="btn"></i>
     </div>
     <hr>
@@ -9,30 +9,30 @@
       <li>
         <a href="{{ route('admin.index') }}">
             <i class="bi bi-house-fill"></i>
-            <span class="link_name">Home</span>
+            <span class="link_name">Главная страница</span>
         </a>
-        <span class="tooltip">Home</span>
+        <span class="tooltip">Главная страница</span>
       </li>
       <li>
         <a href="{{ route('admin.models.index') }}">
             <i class="bi bi-box-fill"></i>
-          <span class="link_name">Spine Models</span>
+          <span class="link_name">Модели</span>
         </a>
-        <span class="tooltip">Spine Models</span>
+        <span class="tooltip">Модели</span>
       </li>
       <li>
         <a href="{{ route('admin.parts.index') }}">
             <i class="bi bi-diagram-3-fill"></i>
-          <span class="link_name">Spine Parts</span>
+          <span class="link_name">Детали моделей</span>
         </a>
-        <span class="tooltip">Spine Parts</span>
+        <span class="tooltip">Детали моделей</span>
       </li>
       <li>
-        <a href="#">
+        <a href="{{ route('admin.posts.index') }}">
             <i class="bi bi-file-text-fill"></i>
-          <span class="link_name">Posts</span>
+          <span class="link_name">Статьи</span>
         </a>
-        <span class="tooltip">Posts</span>
+        <span class="tooltip">Статьи</span>
       </li>
     </ul>
   </div>

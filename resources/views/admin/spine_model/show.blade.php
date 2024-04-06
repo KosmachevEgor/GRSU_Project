@@ -5,9 +5,6 @@
 ])
 <div class="card">
     <div class="row g-0">
-      {{-- <div class="col-md-4">
-        <img src="{{ url('/storage/'.$spineModel->model_image_path)}}" class="img-fluid rounded-start" alt="...">
-      </div> --}}
       <div class="col-md-5">
         <div class="card-body">
           <h5 class="card-title">{{ $spineModel->title }}</h5>
@@ -15,7 +12,7 @@
           <p class="card-text">Parts:
             <b>
             @foreach ($spineModel->parts as $modelPart)
-            {{ $modelPart->part_name}}<pre>
+            {{ $modelPart->part_name}}
             @endforeach
             </b>
         </p>
